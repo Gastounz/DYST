@@ -1,0 +1,25 @@
+#formation {
+    @include flex($dir: column, $items: center);
+
+    #formation-list {
+        @include flex($dir: column, $items: center);
+
+        background-color: $bg-highlight;
+        padding: 16px;
+
+        border-radius: 1vh;
+    }
+
+    #no-formation {
+        @include flex($dir: column, $items: center);
+
+        background-color: $bg-highlight;
+        padding: 16px;
+
+        border-radius: 1vh;
+
+        button {
+            width: 200px;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+<section id="formation">
+    <h1>Ma formation</h1>
+    {% if app.user.sessions|length > 0 %}
+    <ul id="formation-list" class="section-content">
+        {% for session in app.user.sessions %}
+        <li>
+            <a href="{{ path('session', {id: session.id}) }}">{{ session.formation }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <div id="no-formation">
+        <p>Vous n'avez aucune formation en cours.</p>
+        <a href="{{ path('home') }}#prestation"><button>Choisir ma formation</button></a>
+    </div>
+    {% endif %}
+</section>

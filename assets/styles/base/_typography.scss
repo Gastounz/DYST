@@ -1,0 +1,77 @@
+h1,
+h2,
+p,
+span,
+a,
+i,
+div,
+li,
+label,
+input,
+textarea,
+button,
+strong {
+    font-family: $advent-pro;
+}
+
+h1,
+h2 {
+    text-align: center;
+    color: $text-highlight;
+    padding: 2%;
+}
+
+p,
+span,
+li,
+input,
+textarea {
+    color: $text-main;
+    font-size: 1.5em;
+    text-align: justify;
+
+    @media screen and (max-width:425px) {
+        font-size: 1.2em;
+    }
+
+    @media screen and (min-width: 426px) and (max-width:1023px) {
+        font-size: 1.15em;
+    }
+}
+
+li {
+    padding: 5px;
+}
+
+a {
+    color: $text-link;
+    text-decoration: none;
+}
+
+label,
+textarea {
+    font-size: 1.25em;
+}
+
+label,
+strong {
+    font-weight: bolder;
+    color: $text-highlight;
+    font-size: 1.5em;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+button {
+    font-size: 1.2em;
+}
+
+i {
+    padding-left: 5px;
+}

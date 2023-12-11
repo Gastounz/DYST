@@ -1,0 +1,11 @@
+<section>
+    <h2>Documents</h2>
+    <div class="section-content">
+        {% for document in course.documents %}
+        <object data="{{ asset(document.name) }}" type="application/pdf" width="100%" height="500px">
+            <p>Impossible de charger le document sur la page. <a href="{{ document.name }}">Télécharger</a></p>
+        </object>
+        <a href="{{ document.name }}">Télécharger</a>
+        {% endfor %}
+    </div>
+</section>

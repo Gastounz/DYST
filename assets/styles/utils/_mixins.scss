@@ -1,0 +1,95 @@
+@mixin button($width: 72px, $height: 36px) {
+    width: $width;
+    height: $height;
+
+    background-color: $bg-main;
+    color: $text-link;
+    font-size: 1.2em;
+
+    font-weight: bold;
+
+    margin-top: 10px;
+    padding-top: 2px;
+
+    border: 1px solid $border-highlight;
+    border-radius: 5px;
+    box-shadow: $thin-shadow;
+
+    &:hover {
+        background-color: $text-link;
+        color: $bg-main;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+    }
+}
+
+@mixin flex($dir: row, $wrap: wrap, $align: normal, $justify: normal, $items: normal) {
+    display: flex;
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+    align-content: $align;
+    justify-content: $justify;
+    align-items: $items;
+}
+
+@mixin text($fs: medium, $ff: ('Times New Roman', Times, serif), $fw: normal) {
+    font-family: $ff;
+    font-size: $fs;
+    font-weight: $fw;
+}
+
+// Margin et padding d'un élément
+@mixin mp($m: unset, $mx: unset, $my: unset, $mt: unset, $mb: unset, $ml: unset, $mr: unset, $p: unset, $px: unset, $py: unset, $pt: unset, $pb: unset, $pl: unset, $pr: unset) {
+    @if ($m ==unset) {
+        @if ($mx ==unset) {
+            margin-left: $ml;
+            margin-right: $mr;
+        }
+
+        @else {
+            margin-left: $mx;
+            margin-right: $mx;
+        }
+
+        @if ($my: unset) {
+            margin-top: $mt;
+            margin-bottom: $mb;
+        }
+
+        @else {
+            margin-top: $mt;
+            margin-bottom: $mb;
+        }
+    }
+
+    @else {
+        margin: $m;
+    }
+
+    @if ($p ==unset) {
+        @if ($px ==unset) {
+            padding-left: $pl;
+            padding-right: $pr;
+        }
+
+        @else {
+            padding-left: $px;
+            padding-right: $px;
+        }
+
+        @if ($my ==unset) {
+            padding-top: $pt;
+            padding-bottom: $pb;
+        }
+
+        @else {
+            padding-top: $pt;
+            padding-bottom: $pb;
+        }
+    }
+
+    @else {
+        padding: $p;
+    }
+
+}

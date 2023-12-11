@@ -1,0 +1,69 @@
+// Haut de la page d'accueil avec logo, courte présentation et image ou vidéo à droite
+
+#presentation {
+    background: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url('../../../images/graph.jpg') 50%;
+    height: 100vh;
+    width: 100vw;
+
+    @include flex($justify: center, $items: center);
+
+    .presentation-block {
+        max-width: 50%;
+
+        #presentation-left {
+            @include flex($dir: column, $items: center);
+
+            img {
+                max-width: 66%;
+                clip-path: circle(50%);
+            }
+
+            p {
+                background-color: $transparency;
+                line-height: 2em;
+                padding: 5%;
+                margin: 2%;
+
+                border-radius: 3%;
+                box-shadow: $large-shadow;
+            }
+        }
+
+        #presentation-right {
+            @include flex($justify: center);
+
+            img {
+                max-width: 90%;
+                border: 2px solid $border-highlight;
+            }
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        @include flex($dir: column, $items: center, $justify: space-evenly);
+
+        .presentation-block {
+            max-width: 90%;
+        }
+    }
+
+    @media screen and (min-width: 426px) and (max-width:1023px) {
+        @include flex($dir: column, $wrap: nowrap, $items: center, $justify: space-evenly);
+
+        .presentation-block {
+            max-width: 90%;
+
+            #presentation-left {
+                @include flex($dir: row, $justify: center, $items: center);
+                gap: 2%;
+
+                img {
+                    width: 38%;
+                    clip-path: circle(50%);
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 1024px) {}
+}

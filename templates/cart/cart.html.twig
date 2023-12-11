@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panier{% endblock %}
+
+{% block body %}
+<section id="cart">
+    <h1>Mon panier</h1>
+    <div id="cart-content" class="section-content">
+        {% if cart.data.amount > 0 %}
+        {% for item in cart.products %}
+        <div class="cart-item">
+            <div class="cart-left">
+                <h2>{{ item.product.name }}</h2>
+                <p>{{item.product.content}}</p>
+                <p><strong>Durée : </strong>{{item.product.duration}}</p>
+            </div>
+            <div class="cart-right">
+                <p>{{ item.product.price }} €
+                </p>
+                <a href="{{ path('cart_remove', {id : item.product.id}) }}"><i class="fa-solid fa-trash"></i></a>
+            </div>
+        </div>
+        {% endfor %}
+        <div id="cart-sum">
+            <p>Total HT : {{ cart.data.subtotalHT }} €</p>
+            <p>TVA : {{ cart.data.tax }} €</p>
+            <p>Total TTC : {{ cart.data.subtotalTTC }} €</p>
+            <a href="{{ path('payment')}}"><button>Valider mon panier</button></a>
+        </div>
+        {% else %}
+        <div id="cart-empty">
+            <p>Votre panier est vide</p>
+            <a href="{{ path('home') }}#prestation"><button>Choisir ma formation</button></a>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

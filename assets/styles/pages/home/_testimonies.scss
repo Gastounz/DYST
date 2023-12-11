@@ -1,0 +1,44 @@
+#testimonies {
+    @include flex($dir: column, $align: center);
+
+    #comments {
+        @include flex($dir: row, $wrap: wrap, $justify: center);
+        gap: 2%;
+
+        .comment {
+            @include flex($dir: column, $justify: flex-start);
+            margin: 3%;
+            padding: 2%;
+
+            border: 1px solid $border-highlight;
+            border-radius: 1vh;
+
+            .comment-head {
+                @include flex($dir: row, $items: center);
+                gap: 10px;
+            }
+
+            .comment-body {
+                margin-top: 5px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .comment {
+            width: 75%;
+        }
+    }
+
+    @media screen and (min-width: 426px) {
+        .comment {
+            width: 40%;
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        .comment {
+            width: 25%;
+        }
+    }
+}

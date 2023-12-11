@@ -1,0 +1,15 @@
+vich_uploader:
+    db_driver: orm
+
+    metadata:
+        type: attribute
+
+    mappings:
+        documents:
+            uri_prefix: /documents
+            upload_destination: '%kernel.project_dir%/public/documents'
+            namer: App\Services\DocumentNamer
+        records:
+            uri_prefix: /records
+            upload_destination: '%kernel.project_dir%/public/records'
+            namer: App\Services\RecordNamer

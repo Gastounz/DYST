@@ -1,0 +1,13 @@
+{% extends "@email_templates/base.html.twig" %}
+
+{% block title %}
+Bienvenue
+{% endblock title %}
+
+{% block body %}
+{% apply inline_css(source('@email_css/welcome.css')) %}
+<h1>Bienvenue {{ username }}</h1>
+<p>Vous pouvez dès maintenant vous connecter à votre profil DYST</p>
+<a href="{{ path('signin') }}">Connectez vous</a>
+{% endapply %}
+{% endblock body %}

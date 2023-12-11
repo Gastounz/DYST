@@ -1,0 +1,59 @@
+#cart {
+    @include flex($dir: column, $items: center);
+
+    #cart-content {
+        @include flex($dir: column);
+
+        background-color: $bg-highlight;
+        padding: 16px;
+
+        border-radius: 1vw;
+    }
+
+    .cart-item {
+        @include flex($dir: row, $wrap: nowrap, $justify: space-between, $items: flex-end);
+        width: 100%;
+
+        box-shadow: $separator-shadow;
+
+        .cart-left {
+            @include flex($dir: column, $items: flex-start);
+            width: 80%;
+        }
+
+        .cart-right {
+            @include flex($dir: row, $items: center);
+        }
+    }
+
+    #cart-sum {
+        @include flex($dir: column, $items: flex-end);
+        margin-top: 10px;
+    }
+
+    #cart-empty {
+        @include flex($dir: column, $items: center);
+    }
+
+    button {
+        width: 200px;
+    }
+
+    @media screen and (max-width: 425px) {
+        #cart-content {
+            width: 95%;
+        }
+    }
+
+    @media screen and (min-width: 426px) {
+        #cart-content {
+            width: 70%;
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        #cart-content {
+            width: 50%;
+        }
+    }
+}

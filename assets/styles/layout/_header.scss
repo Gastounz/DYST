@@ -1,0 +1,104 @@
+header {
+    @include flex();
+    position: fixed;
+    z-index: 1;
+
+    nav {
+        @include flex($justify: space-between, $items: center);
+
+        background-color: $bg-highlight;
+        position: fixed;
+        width: 100%;
+        height: 64px;
+
+        border-bottom: 3px double $border-highlight;
+        box-shadow: 1px 1px 1px 1px $bg-highlight;
+
+        label::before {
+            content: "☰";
+            font-size: 2.5em;
+            font-weight: bold;
+            color: white;
+            position: absolute;
+            top: 0;
+            right: 5px;
+            cursor: pointer;
+        }
+
+        label {
+            display: flex;
+        }
+    }
+
+    #logo-small {
+        position: fixed;
+        float: left;
+        z-index: 2;
+
+        padding: 5px;
+        width: 60px;
+    }
+
+    label,
+    #toggle {
+        display: none;
+    }
+
+    #toggle:checked~nav label::before {
+        content: "X";
+    }
+
+    @media screen and (max-width: 1023px) {
+
+        ul {
+            display: none;
+
+            li {
+                float: right;
+                font-size: 1.6em;
+            }
+        }
+
+        #toggle:checked~nav ul {
+            @include flex($dir: column-reverse, $items: flex-end);
+            width: 100%;
+            background-color: $bg-highlight;
+            z-index: 1;
+
+            position: fixed;
+            top: 60px;
+
+            border-bottom: 3px double $border-highlight;
+            box-shadow: 1px 1px 1px 1px $bg-highlight;
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+
+        nav {
+
+            ul {
+                @include flex($items: center);
+
+                li {
+                    font-size: 1.2em;
+
+                    a {
+                        padding: 16px;
+
+                        &:hover {
+                            transform: scale(1.25);
+                            font-weight: bolder;
+                            transition: 0.1s;
+                        }
+                    }
+                }
+            }
+
+            label:before {
+                display: none;
+            }
+        }
+
+    }
+}

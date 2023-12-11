@@ -1,0 +1,20 @@
+<section id="testimonies">
+    <h1>Témoignages</h1>
+    <div id="comments" class="section-content">
+        {% for comment in comments %}
+        <div class="comment">
+            <div class="comment-head">
+                <img class="profile profile-small" {% if comment.author.picture %} src="{{ comment.author.picture }}" {%
+                    else %} src="{{ asset('build/assets/images/user.png') }}" {% endif %} alt="">
+                <div class="comment-head-right">
+                    <strong>{{ comment.author.firstname }}</strong>
+                    <p>Le {{ comment.date|date("j/m/Y") }}</p>
+                </div>
+            </div>
+            <div class="comment-body">
+                <p>{{ comment.comment }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>

@@ -1,0 +1,17 @@
+<section id="prestation">
+    <h1>Les formations</h1>
+    <div id="liste-prestations" class="section-content">
+        {% for formation in formations %}
+        <div class="formation-box">
+            <div class="formation-text">
+                <h2>{{ formation.getName }}</h2>
+                <p><strong>Contenu : </strong></p>
+                <p>{{ formation.getContent }}</p>
+                <p><strong>Durée : </strong>{{ formation.getDuration }}</p>
+                <p><strong>Tarif : </strong>{{ formation.getPrice }} €</p>
+            </div>
+            <a href="{{ path('cart_add', {id: formation.getId}) }}"><button>Ajouter au panier</button></a>
+        </div>
+        {% endfor %}
+    </div>
+</section>

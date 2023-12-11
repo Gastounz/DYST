@@ -1,0 +1,27 @@
+.flash {
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+
+    background-color: $bg-main;
+    padding: 10px;
+    color: $text-highlight;
+
+    p {
+        text-align: center;
+    }
+
+    @keyframes hide {
+        from {
+            top: 0;
+        }
+
+        to {
+            top: -100px;
+        }
+    }
+
+    animation-delay: 3s;
+    animation: 2s ease-in 3s hide;
+    animation-fill-mode: forwards;
+}

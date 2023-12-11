@@ -1,0 +1,39 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+Connexion
+{% endblock title %}
+
+{% block body %}
+<div class="log">
+    <h1>Connexion</h1>
+    <form action="{{ path('signin') }}" method="post">
+        <div class="form-row">
+            <label for="username">Nom d'utilisateur</label>
+            <input type="text" name="_username" id="username">
+        </div>
+        <div class="form-row">
+            <label for="password">Mot de passe</label>
+            <input type="password" name="_password" id="password">
+        </div>
+        <div class="form-row checkbox">
+            <label for="remember" hidden></label>
+            <input type="checkbox" name="_remember_me" id="remember">
+            <p>Se souvenir de moi</p>
+        </div>
+        {% if csrf_token('authenticate') %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+        {% endif %}
+        {% if error %}
+        <ul class="form-errors">
+            <li>{{ error.messageKey | trans(error.messageData, 'security') }}</li>
+        </ul>
+        {% endif %}
+        <div class="form-options">
+            <button>Connexion</button>
+            <a href="{{ path('app_forgot_password_request') }}">Mot de passe perdu</a>
+            <a href="{{ path('signup') }}">Créer un compte</a>
+        </div>
+    </form>
+</div>
+{% endblock body %}

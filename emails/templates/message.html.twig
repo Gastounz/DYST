@@ -1,0 +1,12 @@
+{% extends "@email_templates/base.html.twig" %}
+
+{% block title %}
+Message d'un utilisateur
+{% endblock title %}
+
+{% block body %}
+{% apply inline_css(source('@email_css/welcome.css')) %}
+<h1>Nouveau message de {{ firstname }} {{ lastname }}</h1>
+<p>{{ message }}</p>
+{% endapply %}
+{% endblock body %}

@@ -1,0 +1,30 @@
+// utils
+@import 'utils/variables';
+@import 'utils/mixins';
+
+// base
+@import 'base/reset';
+@import 'base/body';
+@import 'base/fonts';
+@import 'base/typography';
+
+// layout
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/flashes';
+@import 'layout/section';
+
+// components
+@import 'components/form';
+@import 'components/profile';
+
+// pages
+@import 'pages/home/presentation';
+@import 'pages/home/prestation';
+@import 'pages/home/apropos';
+@import 'pages/home/testimonies';
+@import 'pages/home/contact';
+@import 'pages/home/networks';
+@import 'pages/content/comment';
+@import 'pages/content/formation';
+@import 'pages/cart';

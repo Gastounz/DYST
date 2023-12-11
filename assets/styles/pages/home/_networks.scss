@@ -1,0 +1,28 @@
+#networks {
+
+    ul {
+        @include flex($dir: row, $items: center, $justify: center);
+
+        li {
+            padding: 20px;
+            font-size: 2em;
+
+            i {
+                color: $text-link;
+            }
+
+            a::hover {
+                transform: scale(1.5);
+                transition: 0.1s;
+            }
+        }
+    }
+
+    box-shadow: none;
+
+    @media screen and (max-width: 425px) {}
+
+    @media screen and (min-width: 426px) {}
+
+    @media screen and (min-width: 1024px) {}
+}

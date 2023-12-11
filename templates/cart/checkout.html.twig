@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Paiement en cours{% endblock %}
+
+{% block javascripts %}
+<script src="https://js.stripe.com/v3/"></script>
+{{ encore_entry_script_tags('stripe-checkout') }}
+{% endblock %}
+
+{% block body %}
+<div id="checkout">
+    <!-- Checkout will insert the payment form here -->
+</div>
+{% endblock %}

@@ -1,0 +1,68 @@
+form {
+    background-color: $bg-highlight;
+    width: 100%;
+    padding: 3%;
+
+    border-radius: 1vw;
+
+    .form-row {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        label {
+            margin: 5px;
+            text-align: left;
+        }
+
+        input,
+        textarea {
+            border: 1px solid $border-highlight;
+            border-radius: 5px;
+            box-shadow: $thin-shadow;
+
+            padding: 10px;
+            background-color: $bg-secondary;
+
+            transition: 0.05s ease-in-out;
+
+            &:hover {
+                border: 4px solid $border-highlight;
+                transition: 0.1s ease-in-out;
+            }
+        }
+
+        textarea {
+            height: 10em;
+        }
+    }
+
+    .checkbox {
+        flex-direction: row !important;
+        justify-content: left;
+        gap: 5px;
+        align-items: center;
+    }
+
+    .form-errors>li {
+        color: $text-error;
+    }
+
+    .form-options {
+        @include flex($dir: column, $justify: space-around, $items: center);
+        gap: 16px;
+    }
+
+    input::file-selector-button {
+        @include button($width: 125px);
+
+        font-family: $advent-pro;
+        font-size: 1em;
+        margin: unset;
+        margin-right: 10px;
+    }
+}
+
+button {
+    @include button($width: 125px);
+}

@@ -1,0 +1,58 @@
+// Illustration et courte description des prestations proposées
+
+#prestation {
+    @include flex($dir: column, $items: center);
+
+    #liste-prestations {
+        @include flex($dir: row, $wrap: wrap, $justify: center);
+        gap: 5%;
+
+        .formation-box {
+            @include flex($dir: column, $justify: space-between, $items: center);
+
+            margin: 1%;
+            padding: 1%;
+
+            background-color: $bg-highlight;
+
+            border: 3px solid $border-highlight;
+            border-radius: 3%;
+            box-shadow: $large-shadow;
+
+            p {
+                margin: 2%;
+                text-align: left;
+
+                color: $text-highlight;
+            }
+
+            strong {
+                color: $text-main;
+            }
+
+            button {
+                @include button($width: 160px);
+            }
+
+            &:hover {
+                background-color: $bg-secondary;
+                cursor: pointer;
+                transition: 0.3s ease-in-out;
+            }
+        }
+    }
+
+    @media screen and (max-width: 425px) {}
+
+    @media screen and (min-width: 426px) {
+        .formation-box {
+            max-width: 50%;
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        .formation-box {
+            max-width: 35%;
+        }
+    }
+}

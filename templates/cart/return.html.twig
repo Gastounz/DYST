@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Paiement réussi{% endblock %}
+
+{% block javascripts %}
+{{ encore_entry_script_tags('stripe-return') }}
+{% endblock %}
+
+{% block body %}
+<section id="payment-return" class="hidden">
+    <h1>Paiement effectué !</h1>
+    <p>Un email de confirmation vous a été envoyé à {{ app.user.email }}</p>
+    <div class="section-content">
+    </div>
+</section>
+{% endblock %}

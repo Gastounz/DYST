@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Session{% endblock %}
+
+{% block body %}
+<section>
+    <h1>{{ session }}</h1>
+    <div class="section-content">
+        <ul>
+            {% for course in session.courses %}
+            <li><a href="{{ path('course', {id: course.id}) }}">{{ course }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,5 @@
+#comment {
+    @include flex($dir: column, $items: center);
+
+    padding-top: 16px;
+}

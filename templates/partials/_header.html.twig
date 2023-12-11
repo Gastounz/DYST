@@ -1,0 +1,31 @@
+<header>
+    <div>
+        <a href="{{ path('home') }}"><img id="logo-small" src="{{ asset('build/assets/images/Logo.jpg')}}"></a>
+        <input type="checkbox" id="toggle">
+        <nav>
+            <label for="toggle"></label>
+            <ul>
+                <!-- <li><a href="#langue">Langue</a></li> -->
+                <!-- <li><a href="#reserver">Réserver</a></li> -->
+                {% if is_granted("ROLE_ADMIN") %}
+                <li><a href="{{ path('admin') }}">Administration</a>
+                </li>
+                {% endif %}
+                <li><a href="{{ path('cart') }}">Mon panier<i class="fa-solid fa-cart-shopping fa-fw"></i></a></li>
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <li><a href="{{ path('content') }}">Ma formation<i class="fa-solid fa-graduation-cap fa-fw"></i></a>
+                </li>
+                <li><a href="{{ path('logout') }}">Déconnexion<i class="fa-solid fa-right-from-bracket fa-fw"></i></a>
+                </li>
+                <li><a href="{{ path('profile') }}"><img class="profile profile-small" {% if app.user.picture %}
+                            src="{{ app.user.picture }}" {% else %} src="{{ asset('build/assets/images/user.png') }}" {%
+                            endif %} alt=""></a>
+                </li>
+                {% else %}
+                <li><a href="{{ path('signup') }}">Inscription<i class="fa-solid fa-user-plus fa-fw"></i></a></li>
+                <li><a href="{{ path('signin') }}">Connexion<i class="fa-solid fa-right-to-bracket fa-fw"></i></a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</header>

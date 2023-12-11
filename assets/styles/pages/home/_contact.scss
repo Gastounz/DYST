@@ -1,0 +1,57 @@
+// Formulaire de contact
+
+#contact {
+    @include flex($dir: column, $items: center);
+
+    @media screen and (max-width: 425px) {}
+
+    @media screen and (min-width: 426px) {}
+
+    @media screen and (min-width: 1024px) {}
+}
+
+// #contact {
+//     background-color: aliceblue;
+// }
+
+// form {
+//     margin: 0 auto;
+//     max-width: 900px;
+// }
+
+// input,
+// textarea,
+// button {
+//     border: none;
+//     width: 55%;
+//     padding: 1px 0;
+//     margin: 1px 0;
+//     font-size: 1.2em;
+//     font-family: 'Advent Pro', sans-serif;
+//     border-radius: 5px;
+// }
+
+// textarea {
+//     height: 120px;
+//     max-height: 120px;
+//     max-width: 491px;
+// }
+
+// button {
+//     font-size: 1.5em;
+//     background-color: aliceblue;
+// }
+
+// button:hover {
+// //     background-color: #e55039;
+// //     color: aliceblue;
+// //     cursor: pointer;
+// //     transition: 0.3s ease-in-out;
+// }
+
+// form button:hover {
+//     background-color: #1cce3a;
+//     color: aliceblue;
+//     cursor: pointer;
+//     transition: 0.3s ease-in-out;
+// }

@@ -1,0 +1,26 @@
+// Cadre de la page d'accueil
+
+section {
+    @include flex($dir: column, $items: center);
+
+    box-shadow: $separator-shadow;
+    padding-bottom: 5%;
+    width: 100%;
+
+    .section-content {
+
+        @include flex($justify: center);
+
+        @media screen and (max-width: 425px) {
+            width: 95vw;
+        }
+
+        @media screen and (min-width: 426px) {
+            width: 85vw;
+        }
+
+        @media screen and (min-width: 1024px) {
+            width: 75vw;
+        }
+    }
+}

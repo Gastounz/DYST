@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil{% endblock %}
+
+{% block body %}
+<div class="log">
+    <h1>Mon profil</h1>
+    {{ form_start(form) }}
+    {{ form_rest(form) }}
+    <div class="form-options">
+        <a href="{{ path('new_password') }} ">Modifier mon mot de passe</a>
+        <button>Enregistrer</button>
+    </div>
+    {{ form_end(form) }}
+</div>
+{% endblock %}

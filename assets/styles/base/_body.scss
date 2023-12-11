@@ -1,0 +1,16 @@
+html {
+    background-color: $bg-main;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+}
+
+main {
+    padding-top: 64px;
+    @include flex($dir: column, $items: center);
+
+    min-height: calc(100vh - 80px);
+}

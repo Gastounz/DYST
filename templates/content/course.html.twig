@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cours{% endblock %}
+
+{% block body %}
+<h1>{{ course }}</h1>
+{% include "./content/partials/_record.html.twig" %}
+{% include "./content/partials/_document.html.twig" %}
+{% endblock %}
